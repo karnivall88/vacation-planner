@@ -1,0 +1,12 @@
+<div class="container">
+    <!-- <h1>Vacation planner</h1>  style it later -->
+<mat-grid-list cols="3"  gutterSize ="4px" >
+<mat-grid-tile  [colspan] = "2" [rowspan] = "2">
+<app-calendar></app-calendar>
+</mat-grid-tile>
+<mat-grid-tile  [colspan] = "1" [rowspan] = "2">      
+    <app-vacation-form></app-vacation-form>
+   
+</mat-grid-tile>
+</mat-grid-list>
+</div>

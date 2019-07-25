@@ -1,0 +1,18 @@
+<div class="container">
+<full-calendar #calendar
+  deepChangeDetection = "true"
+  [height]=             "auto"
+  (dateClick)=          "handleDateClick($event)"
+  [plugins] =           "calendarOptions.plugins"
+  [events] =            "calendarEvents"
+  [eventLimit] =        "calendarOptions.eventLimit"
+  [defaultView] =       "calendarOptions.defaultView"
+  [firstDay] =          "calendarOptions.firstDay"
+  [titleFormat] =       "calendarOptions.title"
+  [header] =            "calendarOptions.header"
+  [weekNumbers] =       "calendarOptions.weekNumbers"
+  [navLinks] =          "calendarOptions.navLinks"
+  [displayEventTime]=   "false"
+  (eventMouseEnter) =   "onEventHover($event)"
+></full-calendar>
+</div>

@@ -1,0 +1,111 @@
+<div class="vac-form">
+<mat-grid-list cols = "2">
+        <form [formGroup] = "vacationForm">
+        <mat-form-field >
+                <input id="empId" 
+                        matInput
+                        placeholder="Employee ID"
+                        formControlName = "empId"
+                        
+                         />
+        </mat-form-field>
+        <mat-form-field>
+                <input id="department" 
+                        matInput
+                        placeholder="Department"
+                        formControlName = "department">
+                       
+        </mat-form-field>
+        <mat-form-field>
+                <input id="firstName"
+                        matInput
+                        placeholder="First Name"
+                        formControlName = "firstName"
+                        >
+        </mat-form-field>
+        <mat-form-field>
+                <input  id="lastName"
+                         matInput
+                        placeholder="Last Name"
+                        formControlName = "lastName"
+                         >
+        </mat-form-field>
+    <mat-form-field>
+            <input      id="position"
+                        matInput 
+                        placeholder="Position"
+                        formControlName = "position"
+                        >
+    </mat-form-field>
+    <mat-form-field>
+            <input      id="manager"
+                        matInput 
+                        placeholder="Direct Manager"
+                        formControlName = "manager"
+                        >
+    </mat-form-field>
+    <mat-form-field>
+    <mat-label>Vacation type</mat-label>
+        <mat-select     id="vType"
+                        matInput
+                        placeholder = "Vacation Type"
+                        formControlName = "vType"
+                       >
+        <mat-option *ngFor="let vacation of vacations" [value]="vacation.value" >{{vacation.viewValue}} </mat-option>
+    </mat-select>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+            <input      id="vStart"
+                        matInput
+                        [matDatepicker]="vacStartDate"
+                        placeholder="Start Date"
+                        formControlName = "vStart">
+            <mat-datepicker-toggle matSuffix [for]="vacStartDate"></mat-datepicker-toggle>
+            <mat-datepicker #vacStartDate></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+            <input      
+                        matInput 
+                        [matDatepicker]="vacEndDate" 
+                        placeholder="End Date"
+                        formControlName="vEnd">
+            <mat-datepicker-toggle matSuffix [for]="vacEndDate"></mat-datepicker-toggle>
+            <mat-datepicker #vacEndDate></mat-datepicker>
+    </mat-form-field>
+
+    <br> 
+    <mat-label for="penultimate" style="padding: 16px;" id="radio-group-label">I would like my holiday to be paid on:</mat-label>
+    <mat-radio-group id="penultimate"
+                     name="penultimate"
+                     formControlName = "penultimate"
+                     
+                 class="radio-group" >
+            <mat-radio-button color="primary" (click) = "vacationForm.controls.payDay.disable()" value="penultimate">The penultimate working day before the start of the holiday</mat-radio-button>
+            <mat-radio-button color="primary" (click) = "vacationForm.controls.payDay.enable()" value= "Other day">Other day ( no later than next pay day following the use of the holiday)</mat-radio-button>
+    </mat-radio-group>
+    <mat-form-field>
+            <input      id="payDay"
+                        formControlName="payDay"
+                        matInput
+                        [matDatepicker]="payDay"
+                        placeholder="Pick a date">
+            <mat-datepicker-toggle matSuffix [for]="payDay"></mat-datepicker-toggle>
+            <mat-datepicker #payDay></mat-datepicker>
+        </mat-form-field> <br>
+
+        <mat-checkbox   style="margin-left:16px;"
+                        id="print"
+                        formControlName="print"
+                        color="primary"
+        
+        
+        >Print form after submitting</mat-checkbox> <br>
+        <div class="button-section">
+        <button  (click) ="add()" mat-flat-button color="primary">Submit</button>
+        <button mat-flat-button >Cancel</button>
+        </div>
+</form>
+    </mat-grid-list>
+</div>
+<!-- [(ngModel)] = "disabled" -->

@@ -1,0 +1,19 @@
+.container{
+    width: 1415px;
+    padding: 56px 48px;
+}
+mat-grid-tile
+{
+    background: #F2F2F2;
+    
+}
+app-calendar
+{
+    margin: 0px 16px;
+}
+.calendar
+{
+    position: absolute;
+    flex: flexbox;
+    justify-content: flex-start;
+}

@@ -1,0 +1,9 @@
+<mat-drawer-container class="nav-container" [hasBackdrop]=true>
+        <mat-drawer #drawer [mode]="over">Menu</mat-drawer>
+        <mat-drawer-content>       
+                <router-outlet></router-outlet>
+                <button mat-raised-button (click)="drawer.toggle()">Menu</button>
+        </mat-drawer-content>
+        
+      </mat-drawer-container>
+      
